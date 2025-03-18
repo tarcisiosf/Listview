@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class tela4 extends AppCompatActivity {
     private Button btn_volt, btn_avancar;
 
     @SuppressLint("MissingInflatedId")
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.tela4);
         ListView listView = (ListView) findViewById(R.id.Lista);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -47,18 +47,13 @@ public class MainActivity extends AppCompatActivity {
         nomes.add("Tarcísio Santos");
         nomes.add("Tiago Felippe");
 
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.lista_1, nomes);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.lista_4, nomes);
         listView.setAdapter(adapter);
 
     }
 
-    public void avancar (View view) throws ClassNotFoundException {
-        Intent intent = new Intent(view.getContext(), tela2.class);
-        view.getContext().startActivity(intent);
-    }
-
     public void voltar (View view){
-        Intent intent = new Intent(view.getContext(), MainActivity.class);
+        Intent intent = new Intent(view.getContext(), tela3.class);
         view.getContext().startActivity(intent);
     }
 }
